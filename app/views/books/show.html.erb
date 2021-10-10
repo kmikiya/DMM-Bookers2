@@ -1,0 +1,22 @@
+<div>
+<h2>Book detail</h2>
+<table>
+  <tbody>
+    <tr>
+      <td>
+        <%= attachment_image_tag @user_show, :profile_image, :fill, 60, 60, fallback: "no_image.jpg" %><br>
+        <%= @user_show.name %>
+      </td>
+      <td>
+        <%= @book_show.title %>
+      </td>
+      <td>
+        <%= @book_show.opinion %>
+      </td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+<%= render 'books/list', book: @book, user: @user %>

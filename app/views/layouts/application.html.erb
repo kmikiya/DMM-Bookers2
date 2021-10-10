@@ -8,8 +8,49 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+  <header>
+　<div>
+　  <span>
+　    <%= link_to "Bookers", root_path %>
+　   </span>
+　</div>
+    <% if user_signed_in? %>
+       <!--マイページ、自分の投稿一覧indexへ遷移-->
+      <!--link_to "Users", Usersのindexまでのりんく-->
+      <!--link_to "Books", 投稿一覧  Bookのindexまでのりんく-->
+      <li>
+        <%= link_to "Home", user_path(current_user.id) %>
+      </li>
+      <li>
+        <%= link_to "Users", users_path %>
+      </li>
+      <li>
+        <%= link_to "Books", books_path %>
+      </li>
+      <li>
+        <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+      </li>
 
-  <body>
-    <%= yield %>
-  </body>
+    <% else %>
+      <li>
+        <%= link_to "Home", root_path %>
+      </li>
+      <li>
+        <%= link_to "About", homes_path %>
+      </li>
+      <li>
+        <%= link_to "Sign Up", new_user_registration_path %>
+      </li>
+      <li>
+        <%= link_to "Log in",  new_user_session_path  %>
+      </li>
+    <% end %>
+    </header>
+
+<body><%= yield %></body>
+
+    <footer>
+      <p>CopyRight Infratop.inc</p>
+    </footer>
+
 </html>
