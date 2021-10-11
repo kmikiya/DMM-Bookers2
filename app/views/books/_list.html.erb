@@ -1,6 +1,9 @@
 
 <div>
   <h2>User info</h2>
+  <div>
+      <%= attachment_image_tag user, :profile_image,  :fill, 60, 60, fallback: "no_image.jpg" %>
+  </div>
    <table>
        <tbody>
          <tr>
@@ -14,7 +17,11 @@
        </tbody>
    </table>
   <div>
+      <% if user.id == current_user.id %>
       <%= link_to "edit",edit_user_path(current_user.id) %>
+      <% else %>
+      <%= link_to "edit",user_path(current_user.id) %>
+      <% end %>
   </div>
   <h2>New book</h2>
   <div>
