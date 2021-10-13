@@ -30,14 +30,15 @@ class BooksController < ApplicationController
       @book_show = Book.find(params[:id])
       @user_show = @book_show.user
       #@user = User.find(params[:id])
-      @user_current = current_user#部分テンプレートでつかってる
+      
+      #@user_current = current_user#部分テンプレートでつかってる
      # @user = User.find(params[:id])
       @book = Book.new
   end
 
   def edit
     @book = Book.find(params[:id])
-    redirect_to root_path unless current_user.id == @book.user_id
+    redirect_to books_path unless current_user.id == @book.user_id
   end
 
   def update
@@ -52,6 +53,7 @@ class BooksController < ApplicationController
 
   def destroy
     book = Book.find(params[:id])
+    book.user_id = current_user.id
     book.destroy
     redirect_to books_path
   end
@@ -59,7 +61,7 @@ class BooksController < ApplicationController
 private
 
   def book_params
-    params.require(:book).permit(:title, :opinion)
+    params.require(:book).permit(:title, :body)
   end
 
 end

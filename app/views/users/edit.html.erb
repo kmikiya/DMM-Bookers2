@@ -1,3 +1,11 @@
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+<h2>User info</h2>
+
+<div class="error_messages">
 <% if @user.errors.any? %>
   <h3><%= @user.errors.count %>error prohibited this obj from being saved:</h3>
   <lu>
@@ -6,11 +14,8 @@
     <% end %>
   </lu>
 <% end %>
+</div>
 
-<div class="container">
-  <div class="row">
-    <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
-<h2>User info</h2>
 <%= form_with model:@user, local:true do |f| %>
   <div class="form-group">
     <label for="inputName">Name</label><br>

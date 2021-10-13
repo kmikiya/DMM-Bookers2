@@ -25,15 +25,6 @@ body{
     color: #212529;
 }
 
-.navbar-dark .navbar-brand {
-    color: #fff;
-}
-
-.col{
-
-  padding: 0 15px 0 15px;
-}
-
 .row{
     margin:15px;
 }
@@ -60,4 +51,38 @@ body{
 
 div.field, div.actions {
     margin-bottom: 10px;
+}
+
+
+.success_massege {
+    color: green;
+}
+
+.error_messages{
+    color: red;
+}
+
+.fa, .fas {
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 600;
+    line-height: normal;
+}
+
+.text_icon_color {
+    color: #f8f9fa ;
+}
+
+a{
+    /*  color: #fff;*/
+    text-decoration: none;
+}
+
+
+.navbar-toggler{
+    border-color: #fff;
+    text-decoration: none;
+}
+
+.navbar-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
 }
